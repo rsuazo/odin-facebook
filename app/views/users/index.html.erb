@@ -2,11 +2,11 @@
 
 <div id="users">
 <% for user in @users %>
-      <% if !user.in?(current_user.friends) && user != current_user %>
+      <% if !user.in?(current_user.friends) && !user.in?(current_user.inverse_friends) && !user.in?(current_user.requests) && !user.in?(@requests) && user != current_user %>
         <div class="user">
           <p>
             <strong><%=h user.first_name %></strong>
-            <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+            <%= link_to "Add Friend", requests_path(:friend_id => user), :method => :post %>
             <div class="clear"></div>
           </p>
         </div>

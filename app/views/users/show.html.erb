@@ -21,3 +21,16 @@
     <li><%=h user.first_name %></li>
   <% end %>
 </ul>
+
+
+<h2>Friend Requests</h2>
+<ul>
+  <% for request in @requests %>
+  
+    <li><%=h User.find(request.user_id).first_name %>
+      <%= link_to "approve", friendships_path(:friend_id => User.find(request.user_id).id, :request_id => request.id), :method => :post %>
+      </li>
+  <% end %>
+</ul>
+
+
