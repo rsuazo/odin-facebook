@@ -31,6 +31,8 @@
       <%= link_to "approve", friendships_path(:friend_id => User.find(request.user_id).id, :request_id => request.id), :method => :post %>
       </li>
   <% end %>
+
+  
 </ul>
 
 

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   has_many :requests
+  has_many :inverse_requests, :class_name => "Request", :foreign_key => "friend_id"
   
   
   # Include default devise modules. Others available are:

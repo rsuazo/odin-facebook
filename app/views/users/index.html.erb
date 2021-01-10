@@ -2,7 +2,7 @@
 
 <div id="users">
 <% for user in @users %>
-      <% if !user.in?(current_user.friends) && !user.in?(current_user.inverse_friends) && !user.in?(current_user.requests) && !user.in?(@requests) && user != current_user %>
+      <% if !user.in?(current_user.friends) && !user.in?(current_user.inverse_friends) && !user.in?(current_user.requests) && !user.in?(@requests) && !user.in?(@inverse_requests) && user != current_user %>
         <div class="user">
           <p>
             <strong><%=h user.first_name %></strong>
