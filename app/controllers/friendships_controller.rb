@@ -4,8 +4,7 @@ class FriendshipsController < ApplicationController
         if @friendship.save
             flash[:notice] = "Added friend."
             Request.find(params[:request_id]).destroy
-            redirect_to users_path
-
+            redirect_to user_path(current_user)
         else
             flash[:error] = "Unable to add friend."
             redirect_to users_path

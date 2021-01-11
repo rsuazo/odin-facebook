@@ -1,17 +1,17 @@
 <h1>My Profile</h1>
 
-<p>Username: <%= @user.user_name %></p>
+<p>Username: <%= current_user.user_name %></p>
 
 <h2>Friends</h2>
 <ul>
-   <% for friendship in @user.friendships %>
+   <% for friendship in current_user.friendships %>
      <li>
        <%=h friendship.friend.first_name %>
        (<%= link_to "remove", friendship, :method => "delete" %>)
      </li>
     <% end %>
 
-    <% for inverse_friendship in @user.inverse_friendships %>
+    <% for inverse_friendship in current_user.inverse_friendships %>
     <li>
     <%=h inverse_friendship.user.first_name %>
     (<%= link_to "remove", inverse_friendship_path(inverse_friendship), method: 'delete' %>)
@@ -25,14 +25,17 @@
 <h2>Friend Requests</h2>
 <ul>
   <% for request in @requests %>
-    <li><%=h User.find(request.user_id).first_name %>
-      <%= link_to "approve", friendships_path(:friend_id => User.find(request.user_id).id, :request_id => request.id), :method => :post %>
+    <li><%=h User.find(request.friend_id).first_name %>
+      <%= link_to "cancel", request_path(id: request.id), :method => :delete %>
       </li>
   <% end %>
+
+    <% for inverse_request in @inverse_requests %>
+    <li><%=h User.find(inverse_request.user_id).first_name %>
+      <%= link_to "approve", friendships_path(:friend_id => User.find(inverse_request.user_id).id, :request_id => inverse_request.id), :method => :post %>
+      </li>
+  <% end %>
+
 </ul>
 
 <p><%= link_to "Find Friends", users_path %></p>
-
-
-
-
