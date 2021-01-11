@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :friendships
   resources :inverse_friendships
   resources :requests
+  resources :posts
 end
