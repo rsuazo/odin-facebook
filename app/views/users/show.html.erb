@@ -7,14 +7,14 @@
    <% for friendship in current_user.friendships %>
      <li>
        <%=h friendship.friend.first_name %>
-       (<%= link_to "remove", friendship, :method => "delete" %>)
+       (<%= link_to "Unfriend", friendship, :method => "delete" %>)
      </li>
     <% end %>
 
     <% for inverse_friendship in current_user.inverse_friendships %>
     <li>
     <%=h inverse_friendship.user.first_name %>
-    (<%= link_to "remove", inverse_friendship_path(inverse_friendship), method: 'delete' %>)
+    (<%= link_to "Unfriend", inverse_friendship_path(inverse_friendship), method: 'delete' %>)
     </li>
   <% end %>
 </ul>
@@ -23,13 +23,13 @@
 <ul>
   <% for request in @requests %>
     <li><%=h User.find(request.friend_id).first_name %>
-      <%= link_to "cancel", request_path(id: request.id), :method => :delete %>
+      (<%= link_to "Cancel Request", request_path(id: request.id), :method => :delete %>)
       </li>
   <% end %>
 
     <% for inverse_request in @inverse_requests %>
     <li><%=h User.find(inverse_request.user_id).first_name %>
-      <%= link_to "approve", friendships_path(:friend_id => User.find(inverse_request.user_id).id, :request_id => inverse_request.id), :method => :post %>
+      (<%= link_to "Approve Request", friendships_path(:friend_id => User.find(inverse_request.user_id).id, :request_id => inverse_request.id), :method => :post %>)
       </li>
   <% end %>
 
