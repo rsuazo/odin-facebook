@@ -7,6 +7,8 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 
+gem 'rails-controller-testing'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
 # Use postgresql as the database for Active Record

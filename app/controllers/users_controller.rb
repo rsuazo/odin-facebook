@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        # @requests = Request.all.select {|request| request.friend_id == current_user.id || request.user_id == current_user.id}
         @requests = current_user.requests
         @inverse_requests = current_user.inverse_requests
     end
