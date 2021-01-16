@@ -6,8 +6,8 @@ RSpec.describe 'Users', type: :request do
     context 'when logged in' do
 
         before(:each) do
-            user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
-            login_as(user, :scope => :user)
+            user = User.create!(email:'test@example.com', password: 'f4k3p455w0rd')
+            login_as(user, scope: :user)
         end
 
         it "renders the user's show page" do
