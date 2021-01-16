@@ -19,20 +19,6 @@ RSpec.describe 'Users', type: :request do
             get users_path
             expect(response).to render_template(:index)
         end
-
-
-        it "creates a Widget and redirects to the Widget's page" do
-            get "/users/current"
-            expect(response).to render_template(:show)
-        
-            # post "/users", :params => { :user => {:name => "My Widget"} }
-        
-            # expect(response).to redirect_to(assigns(:user))
-            # follow_redirect!
-        
-            # expect(response).to render_template(:show)
-            # expect(response.body).to include("Widget was successfully created.")
-        end
     end
 
     context 'when logged out' do 
@@ -40,5 +26,11 @@ RSpec.describe 'Users', type: :request do
             get unauthenticated_root_path
             expect(response).to render_template(:new)
         end
+
+        it 'redirects to the sign-in page if attempting to access any resource' do
+            get '/users'
+            expect(response).to redirect_to new_user_session_path 
+        end
+
     end
   end
