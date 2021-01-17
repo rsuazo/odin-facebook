@@ -3,15 +3,15 @@
 # what HTTP response should the application return?”
         
         
-RSpec.describe RequestsController do
-    describe "creates a new request" do 
+RSpec.describe FriendshipsController do
+    describe "creates a new friendship" do 
       before(:each) do
             user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd')
             login_as(user, :scope => :user)
         end
 
 
-      it "creates a Friend Request and redirects to Users#Index page" do
+      it "creates a Friendship and redirects to User#Show page" do
         friend = User.create!(:email => 'friend@example.com', :password => 'f4k3p455w0rd')
         get users_path
         expect(response).to render_template(:index)

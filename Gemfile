@@ -57,6 +57,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
