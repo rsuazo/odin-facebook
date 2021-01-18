@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   resources :requests
   resources :homepage
   resources :posts
+  resources :likes
 end
