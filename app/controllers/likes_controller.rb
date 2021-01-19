@@ -4,14 +4,14 @@ class LikesController < ApplicationController
     end
 
     def create 
-        @like = Like.build(user_id: current_user.id, post_id: params[:post_id])
+        @like = Post.find(params[:post_id]).likes.build(user_id: params[:user_id])
        
         if @like.save
             flash[:notice] = "Post liked!"
-            redirect_to user_path
+            redirect_to homepage_index_path
         else
             flash[:error] = "Unable to like post."
-            redirect_to users_path
+            redirect_to homepage_index_path
         end
 
     end

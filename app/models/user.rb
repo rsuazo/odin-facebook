@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :inverse_requests, :class_name => "Request", :foreign_key => "friend_id"
   
   has_many :posts
+  has_many :likes
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
