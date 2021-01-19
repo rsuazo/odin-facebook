@@ -18,7 +18,7 @@
 <% for post in @posts %>
         <div class="post">
           <p>
-            <strong><%=h post.title %></strong>
+            <strong><%= link_to post.title, post_path(post.id) %></strong>
             <div class="clear"></div>
           </p>
           <p>
@@ -26,12 +26,7 @@
             <div class="clear"></div>
           </p>
           <div>
-            <%= form_with url: likes_path, method: :post do |form| %>
-              <%= form.hidden_field :user_id, value: current_user.id %>
-              <%= form.hidden_field :post_id, value: post.id %>
-              <%= form.submit "Like" %>
-            <% end %>
-            <%= post.likes.count %>
+            <strong>Likes:</strong> <%= post.likes.count %>
           </div>
         </div>
 <% end %>

@@ -1,0 +1,52 @@
+<h1>Hello <%= current_user.first_name %>!</h1>
+<body>
+
+<br><br>
+
+<h1>Post</h1>
+
+<div id="posts">
+        <div class="post">
+          <p>
+            <strong><%= @post.title %></strong>
+            <div class="clear"></div>
+          </p>
+          <p>
+            <%=h @post.body %>
+            <div class="clear"></div>
+          </p>
+          <div>
+            <%= form_with url: likes_path, method: :post do |form| %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+              <%= form.hidden_field :post_id, value: @post.id %>
+              <%= form.submit "Like" %> <%= @post.likes.count %>
+            <% end %>
+          </div>
+        </div>
+        <div>
+            <%= form_with url: comments_path, method: :post do |form| %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+              <%= form.hidden_field :post_id, value: @post.id %>
+              <%= form.text_area :body, size: "50x3" %><br>
+              <%= form.submit "Comment" %>
+            <% end %>
+        </div>
+</div>
+
+<div>
+<% for comment in @comments %>
+        <div class="comment">
+          <p>
+            <strong><%= User.find(comment.user_id).first_name %></strong>
+            <div class="clear"></div>
+          </p>
+          <p>
+            <%=h comment.body %>
+            <div class="clear"></div>
+          </p>
+
+        </div>
+<% end %>
+</div>
+
+</body>

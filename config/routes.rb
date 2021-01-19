@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   resources :friendships
   resources :inverse_friendships
   resources :requests
-  resources :homepage
+  resources :homepage, only: [:index]
   resources :posts
-  resources :likes
+  resources :likes, only: [:create]
+  resources :comments, only: [:create]
 end
