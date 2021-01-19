@@ -31,6 +31,7 @@
               <%= form.hidden_field :post_id, value: post.id %>
               <%= form.submit "Like" %>
             <% end %>
+            <%= post.likes.count %>
           </div>
         </div>
 <% end %>
