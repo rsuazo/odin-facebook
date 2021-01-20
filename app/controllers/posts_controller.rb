@@ -19,4 +19,8 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         @comments = Post.find(params[:id]).comments
     end
+
+    def index 
+        @posts = 
+    end
 end
