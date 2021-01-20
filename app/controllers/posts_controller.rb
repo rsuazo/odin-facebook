@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
     def index 
-      @posts = current_user.posts
+      friends = current_user.friends + current_user.inverse_friends
+      posts = friends.collect {|friend| friend.posts}.flatten + current_user.posts
+      posts = posts.sort_by &:created_at
+      @posts = posts.reverse
     end
 
     def create
@@ -18,9 +21,5 @@ class PostsController < ApplicationController
     def show
         @post = Post.find(params[:id])
         @comments = Post.find(params[:id]).comments
-    end
-
-    def index 
-        @posts = 
     end
 end
