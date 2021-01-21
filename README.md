@@ -8,6 +8,10 @@ Things you may want to cover:
 
 ## [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
 
+* Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
+
+* Use `rails db:migrate` to run the migration.
+
 * Ruby version
 
 * System dependencies
