@@ -5,6 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
+
+## [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
+
 * Ruby version
 
 * System dependencies
