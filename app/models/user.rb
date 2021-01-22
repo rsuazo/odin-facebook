@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates :first_name, presence: true 
+  validates :first_name, presence: true, length: { minimum: 3, maximum: 20}
+  validates :last_name, presence: true
   
   has_many :friendships
   has_many :friends, :through => :friendships
