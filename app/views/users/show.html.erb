@@ -1,16 +1,23 @@
 <h1>My Profile</h1>
 
-<p>Username: <%= current_user.user_name %></p>
+<p>
+<div>Username: <%= current_user.user_name %></div>
+<div>First Name: <%= current_user.first_name %></div>
+<div>Last Name: <%= current_user.last_name %></div>
+</p>
 
 <% if @user.avatar.attached? %>
-<img src="<%=(url_for(@user.avatar)) %>" alt="Test" style="width:300px;height:400px;">
+<img src="<%=(url_for(@user.avatar)) %>" alt="Test" style="width:150px;height:201px;">
+<% else %>
+  <div>
+    <%= form_with url: @user, method: :patch do |form| %>
+      <%= form.file_field :avatar %><br><br>
+      <%= form.submit "Upload Photo" %> 
+    <% end %>
+  </div>
 <% end %>
-<div>
-  <%= form_with url: @user, method: :patch do |form| %>
-    <%= form.file_field :avatar %>
-    <%= form.submit "Upload Photo" %> 
-  <% end %>
-</div>
+
+
 
 <h2>Friends</h2>
 <ul>
