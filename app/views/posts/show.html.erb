@@ -5,6 +5,18 @@
 
 <h1>Post</h1>
 
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> Prohibited this user from being saved:</h2>
+
+        <ul>
+            <% @post.errors.each do |error|%>
+                <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <div id="posts">
         <div class="post">
           <p>
@@ -34,7 +46,7 @@
 </div>
 
 <div>
-<% for comment in @comments %>
+<% for comment in @post.comments %>
         <div class="comment">
           <p>
             <strong><%= User.find(comment.user_id).first_name %></strong>

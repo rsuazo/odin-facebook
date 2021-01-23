@@ -7,19 +7,26 @@ class PostsController < ApplicationController
     end
 
     def create
-      @post = current_user.posts.build(title: params[:post][:title], body: params[:post][:body])
+      @post = current_user.posts.new(post_params)
+      
         if @post.save
             flash[:notice] = "Created Post!"
             redirect_to homepage_index_path
 
         else
-            flash[:error] = "Unable to create post."
-            redirect_to users_path
+            flash[:alert] = "Unable to create post."
+            redirect_to homepage_index_path
         end
     end
 
     def show
         @post = Post.find(params[:id])
-        @comments = Post.find(params[:id]).comments
+        @comments = @post.comments
+    end
+
+    private
+
+    def post_params
+        params.require(:post).permit(:title, :body, :id)
     end
 end
