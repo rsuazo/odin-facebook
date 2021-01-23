@@ -1,18 +1,18 @@
+<body>
+
 <h1>Hello <%= current_user.first_name %>!</h1>
 
-  <%= form_with model: @post, local:true do |post_form| %>
-
+  <%= form_with model: @post do |post_form| %>
     <%= post_form.label :title %>
-    <%= post_form.text_field :title %><br><br>
+    <%= post_form.text_field :title, size: "50x1" %><br><br>
     <%= post_form.label :body %>
-    <%= post_form.text_area :body %><br><br>
-    <%= submit_tag("Submit") %>
+    <%= post_form.text_area :body, size: "50x3" %><br><br>
+    <%= post_form.submit %>
   <% end %>
-</body>
 
 <br><br>
 
-<h1>Posts</h1>
+<h2>Posts</h2>
 
 <div id="posts">
 <% for post in @posts %>
@@ -31,3 +31,5 @@
         </div>
 <% end %>
 </div>
+
+</body>
