@@ -25,7 +25,7 @@
 
 12. Users can create a Profile with a Photo. [COMPLETE]
 
-### [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
+    * [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
 
 * Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
 
