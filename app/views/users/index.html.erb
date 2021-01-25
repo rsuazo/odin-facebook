@@ -1,5 +1,12 @@
 <h1>User List</h1>
 
+<%= form_with url: users_path, method: :get do |form| %>
+  <%= form.label :search, "Search for:" %>
+  <%= form.text_field :search %>
+  <%= form.submit "Search" %>
+<% end %>
+<br><br>
+
 <div id="users">
   <% for user in @users %>
     <% if user.in?(@friends) %>
@@ -48,8 +55,3 @@
 </div>
 
 
-<%= form_with url: users_path, method: :get do |form| %>
-  <%= form.label :search, "Search for:" %>
-  <%= form.text_field :search %>
-  <%= form.submit "Search" %>
-<% end %>
