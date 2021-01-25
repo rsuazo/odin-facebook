@@ -11,9 +11,9 @@ class RequestsController < ApplicationController
       end
   
       def destroy
-          @request = Request.find(params[:id])
+          @request = Request.where(friend_id: params[:id]).first
           @request.destroy
           flash[:notice] = "Removed request."
-          redirect_to user_path
+          redirect_to users_path
       end
 end

@@ -1,7 +1,8 @@
 class HomepageController < ApplicationController
     def index
-      @post = Post.new
-      @posts = current_user.posts.reverse
       @user = current_user
+      @requests = current_user.requests 
+      @inverse_requests = current_user.inverse_requests
+      @post = Post.new
     end
 end

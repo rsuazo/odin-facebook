@@ -2,34 +2,32 @@
 
 <h1>Hello <%= current_user.first_name %>!</h1>
 
-  <%= form_with model: @post do |post_form| %>
+  <%= form_with model: @post, url: posts_path do |post_form| %>
     <%= post_form.label :title %>
-    <%= post_form.text_field :title, size: "50x1" %><br><br>
+    <%= post_form.text_field :title, size: "30x1" %><br><br>
     <%= post_form.label :body %>
-    <%= post_form.text_area :body, size: "50x3" %><br><br>
+    <%= post_form.text_area :body, size: "30x3" %><br><br>
     <%= post_form.submit %>
   <% end %>
 
 <br><br>
 
-<h2>Posts</h2>
+<h2>Friends</h2>
+<ul>
+   <% for friendship in current_user.friendships %>
+     <li>
+       <%=h friendship.friend.first_name %>
+       (<%= link_to "Unfriend", friendship, :method => "delete" %>)
+     </li>
+    <% end %>
 
-<div id="posts">
-<% for post in @posts %>
-        <div class="post">
-          <p>
-            <strong><%= link_to post.title, post_path(post.id) %></strong>
-            <div class="clear"></div>
-          </p>
-          <p>
-            <%=h post.body %>
-            <div class="clear"></div>
-          </p>
-          <div>
-            <strong>Likes:</strong> <%= post.likes.count %>
-          </div>
-        </div>
-<% end %>
-</div>
+    <% for inverse_friendship in current_user.inverse_friendships %>
+    <li>
+    <%=h inverse_friendship.user.first_name %>
+    (<%= link_to "Unfriend", inverse_friendship_path(inverse_friendship), method: 'delete' %>)
+    </li>
+  <% end %>
+</ul>
 
-</body>
+
+<p><%= link_to "Find Friends", users_path %></p>

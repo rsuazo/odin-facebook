@@ -5,17 +5,16 @@ class InverseFriendshipsController < ApplicationController
               flash[:notice] = "Added friend."
               Request.find(params[:request_id]).destroy
               redirect_to users_path
-  
           else
-              flash[:error] = "Unable to add friend."
-              redirect_to users_path
+            flash[:error] = "Unable to add friend."
+            redirect_to users_path
           end
       end
   
       def destroy
-          @friendship = current_user.inverse_friendships.find(params[:id])
-          @friendship.destroy
-          flash[:notice] = "Removed friendship."
-          redirect_to current_user
+        @friendship = current_user.inverse_friendships.where(user_id: params[:id]).first
+        @friendship.destroy
+        flash[:notice] = "Removed friendship."
+        redirect_to users_path
       end
 end

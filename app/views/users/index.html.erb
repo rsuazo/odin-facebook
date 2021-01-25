@@ -1,15 +1,51 @@
 <h1>User List</h1>
 
 <div id="users">
-<% for user in @users %>
-      <% if !user.in?(current_user.friends) && !user.in?(current_user.inverse_friends) && !user.in?(current_user.requests) && !user.in?(@requests) && !user.in?(@inverse_requests) && user != current_user %>
-        <div class="user">
+  <% for user in @users %>
+    <% if user.in?(@friends) %>
+     <div class="user">
+          <p>
+            <strong><%=h user.first_name %></strong>
+            <%= link_to "Remove Friend", friendship_path(:id => user), :method => "delete" %>
+            <div class="clear"></div>
+          </p>
+        </div>
+      <% elsif user.in?(@inverse_friends) %>
+     <div class="user">
+          <p>
+            <strong><%=h user.first_name %></strong>
+            <%= link_to "Remove Friend", inverse_friendship_path(:id => user), :method => "delete" %>
+            <div class="clear"></div>
+          </p>
+        </div>
+    <% elsif  user.in?(@requests) %>
+     <div class="user">
+          <p>
+            <strong><%=h user.first_name %></strong>
+            <%= link_to "Cancel Friend Request", request_path(:id => user), :method => "delete" %>
+            <div class="clear"></div>
+          </p>
+        </div>
+        <% elsif  user.in?(@inverse_requests) %>
+     <div class="user">
+          <p>
+            <strong><%=h user.first_name %></strong>
+            <%= link_to "Approve Friend Request", friendships_path(:friend_id => user.id, :request_id => Request.where(friend_id: current_user.id).first.id ), :method => "post" %><br>
+            <%= link_to "Deny Friend Request", request_path(:id => current_user.id), :method => "delete" %>
+            <div class="clear"></div>
+          </p>
+        </div>
+    <% elsif  user != current_user %> 
+     <div class="user">
           <p>
             <strong><%=h user.first_name %></strong>
             <%= link_to "Add Friend", requests_path(:friend_id => user), :method => :post %>
             <div class="clear"></div>
           </p>
         </div>
-      <% end %>
-<% end %>
+    <% end %>
+  <% end %>
 </div>
+
+
+
