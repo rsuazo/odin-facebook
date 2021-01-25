@@ -5,7 +5,7 @@
 
 2. Users must sign in to see anything except the sign in page. [COMPLETE]
 
-3. User sign-in should use the Devise gem. Devise gives you all sorts of helpful methods so you no longer have to write your own user passwords, sessions, and #current_user methods. See the Railscast (which uses Rails 3) for a step-by-step introduction. The docs will be fully current. [COMPLETE]
+3. User sign-in should use the Devise gem. Devise gives you all sorts of helpful methods so you no longer have to write your own user passwords, sessions, and #current_user methods. See the [Railscast](http://railscasts.com/episodes/209-introducing-devise?view=asciicast) (which uses Rails 3) for a step-by-step introduction. The docs will be fully current. [COMPLETE]
 
 4. Users can send Friend Requests to other Users. [COMPLETE]
 
