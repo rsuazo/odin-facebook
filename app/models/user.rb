@@ -19,4 +19,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+  def self.search(search)
+    if search
+      name = User.find_by(first_name: search)
+      if name
+        self.where(first_name: name.first_name)
+      else
+        User.all
+      end
+    else
+      User.all
+    end
+  end
 end

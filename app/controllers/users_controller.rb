@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     def index
-      @users = User.all
+      # @users = User.all
+      @users = User.search(params[:search])
       @friends = current_user.friends
       @inverse_friends = current_user.inverse_friends
       @requests = current_user.requests.collect {|request| User.find(request.friend_id)}
@@ -34,6 +35,6 @@ class UsersController < ApplicationController
     private
     
     def user_params
-      params.require(:user).permit(:id, :first_name, :last_name, :avatar)
+      params.require(:user).permit(:id, :first_name, :last_name, :avatar, :search)
     end
 end
