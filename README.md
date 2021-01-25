@@ -27,7 +27,7 @@
 
     * [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
 
-* Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
+        * Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
 
 13. The User Show page contains their Profile information, photo, and Posts. [COMPLETE]
 
