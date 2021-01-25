@@ -30,6 +30,8 @@
         * Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
 
         * Use `rails db:migrate` to run the migration.
+    
+    * [How to Build an Image Upload Feature with Rails and Active Storage](https://www.microverse.org/blog/how-to-build-an-image-upload-feature-with-rails-and-active-storage)
 
 13. The User Show page contains their Profile information, photo, and Posts. [COMPLETE]
 
