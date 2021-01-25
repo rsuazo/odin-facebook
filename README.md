@@ -28,6 +28,8 @@
     * [Active Storage](https://guides.rubyonrails.org/active_storage_overview.html) Configuration
 
         * Run `rails active_storage:install` to generate a migration that creates `active_storage_blobs` & `active_storage_attachments` tables.
+        
+        * Use `rails db:migrate` to run the migration.
 
 13. The User Show page contains their Profile information, photo, and Posts. [COMPLETE]
 
@@ -42,23 +44,8 @@
 18. Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers.
 
 
+* Ruby version: ruby 3.0.0rc1 (2020-12-20 master 8680ae9cbd) [x86_64-darwin19]
 
-* Use `rails db:migrate` to run the migration.
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+* Rails version: Rails 6.1.0
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
