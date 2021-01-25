@@ -8,13 +8,6 @@
 
 <% if @user.avatar.attached? %>
 <img src="<%=(url_for(@user.avatar)) %>" alt="Test" style="width:150px;height:201px;">
-<% else %>
-  <div>
-    <%= form_with url: @user, method: :patch do |form| %>
-      <%= form.file_field :avatar %><br><br>
-      <%= form.submit "Upload Photo" %> 
-    <% end %>
-  </div>
 <% end %>
 
 

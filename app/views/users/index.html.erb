@@ -5,7 +5,7 @@
     <% if user.in?(@friends) %>
      <div class="user">
           <p>
-            <strong><%= user.first_name %></strong>
+            <strong><%=h link_to user.first_name, user_path(:id => user), :method => "get" %></strong>
             <%= link_to "Remove Friend", friendship_path(:id => user), :method => "delete" %>
             <div class="clear"></div>
           </p>
@@ -21,7 +21,7 @@
     <% elsif  user.in?(@requests) %>
      <div class="user">
           <p>
-            <strong><%=h user.first_name %></strong>
+            <strong><%=h link_to user.first_name, user_path(:id => user), :method => "get" %></strong>
             <%= link_to "Cancel Friend Request", request_path(:id => user), :method => "delete" %>
             <div class="clear"></div>
           </p>
@@ -29,7 +29,7 @@
         <% elsif  user.in?(@inverse_requests) %>
      <div class="user">
           <p>
-            <strong><%=h user.first_name %></strong>
+            <strong><%=h link_to user.first_name, user_path(:id => user), :method => "get" %></strong>
             <%= link_to "Approve Friend Request", friendships_path(:friend_id => user.id, :request_id => Request.where(friend_id: current_user.id).first.id ), :method => "post" %><br>
             <%= link_to "Deny Friend Request", request_path(:id => current_user.id), :method => "delete" %>
             <div class="clear"></div>
@@ -38,7 +38,7 @@
     <% elsif  user != current_user %> 
      <div class="user">
           <p>
-            <strong><%=h user.first_name %></strong>
+            <strong><%=h link_to user.first_name, user_path(:id => user), :method => "get" %></strong>
             <%= link_to "Add Friend", requests_path(:friend_id => user), :method => :post %>
             <div class="clear"></div>
           </p>

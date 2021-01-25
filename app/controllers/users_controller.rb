@@ -13,6 +13,10 @@ class UsersController < ApplicationController
       @posts = @user.posts.reverse
     end
 
+    def edit
+      @user = current_user
+    end
+    
     def update
       @user = User.find(params[:id])
       
@@ -25,9 +29,7 @@ class UsersController < ApplicationController
       end
     end
 
-    def edit
-      @user = current_user
-    end
+
 
     private
     

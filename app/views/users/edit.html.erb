@@ -23,3 +23,14 @@
       <%= form.submit %> 
     <% end %>
   </div>
+
+<br><br>
+
+<h2>Upload Profile Photo</h2><br>
+  <div>
+    <%= form_with model: @user do |form| %>
+      <%= form.hidden_field :id, value: @user.id %>
+      <%= form.file_field :avatar %><br><br>
+      <%= form.submit "Upload Photo" %> 
+    <% end %>
+  </div>
