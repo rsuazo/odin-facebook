@@ -6,8 +6,9 @@ class LikesController < ApplicationController
             flash[:notice] = "Post liked!"
             redirect_to post_path(params[:post_id])
         else
-            flash[:error] = "Unable to like post."
+            flash[:alert] = "Unable to like post."
             redirect_to post_path(params[:post_id])
         end
     end
 end
+
