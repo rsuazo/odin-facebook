@@ -4,7 +4,3 @@ class Like < ApplicationRecord
     belongs_to :post
     belongs_to :user
 end
-
-
-# t.integer "user_id"
-# t.integer "post_id"
