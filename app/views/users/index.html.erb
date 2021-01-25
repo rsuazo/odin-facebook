@@ -5,7 +5,7 @@
     <% if user.in?(@friends) %>
      <div class="user">
           <p>
-            <strong><%=h user.first_name %></strong>
+            <strong><%= user.first_name %></strong>
             <%= link_to "Remove Friend", friendship_path(:id => user), :method => "delete" %>
             <div class="clear"></div>
           </p>
@@ -13,7 +13,7 @@
       <% elsif user.in?(@inverse_friends) %>
      <div class="user">
           <p>
-            <strong><%=h user.first_name %></strong>
+            <strong><%=h link_to user.first_name, user_path(:id => user), :method => "get" %></strong>
             <%= link_to "Remove Friend", inverse_friendship_path(:id => user), :method => "delete" %>
             <div class="clear"></div>
           </p>

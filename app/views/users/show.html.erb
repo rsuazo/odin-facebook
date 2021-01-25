@@ -1,9 +1,9 @@
-<h1>My Profile</h1>
+<h1><%= @user.first_name %>'s Profile</h1>
 
 <p>
-<div>Username: <%= current_user.user_name %></div>
-<div>First Name: <%= current_user.first_name %></div>
-<div>Last Name: <%= current_user.last_name %></div>
+<div>Username: <%= @user.user_name %></div>
+<div>First Name: <%= @user.first_name %></div>
+<div>Last Name: <%= @user.last_name %></div>
 </p>
 
 <% if @user.avatar.attached? %>
@@ -34,7 +34,8 @@
             <div class="clear"></div>
           </p>
           <div>
-            <strong>Likes:</strong> <%= post.likes.count %>
+            <strong>Likes:</strong> <%= post.likes.count %><br>
+            <strong>Comments:</strong> <%= post.comments.count %>
           </div>
         </div>
 <% end %>

@@ -17,8 +17,8 @@
       <% if user_signed_in? %>
         Signed in as <%= current_user.email %>. Not you?
         <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-        <%= link_to "View Profile", user_path(:current) %>
-        <%= link_to "Edit Profile", edit_user_path(:current) %>
+        <%= link_to "View Profile", user_path(current_user.id) %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
         <%= link_to "Home", homepage_index_path %>
         <%= link_to "Timeline", posts_path %>
         <%= link_to "Users Index", users_path %>

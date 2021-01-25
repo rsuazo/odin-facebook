@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     end
 
     def show
-      @user = current_user
+      @user = User.find(params[:id])
       @post = Post.new
-      @posts = current_user.posts.reverse
+      @posts = @user.posts.reverse
     end
 
     def update
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Profile Updated!"
         redirect_to user_path
       else
+        flash[:alert] = "Unable to update profile!"
         render :edit
       end
     end
@@ -28,12 +29,8 @@ class UsersController < ApplicationController
       @user = current_user
     end
 
-    def friend?
-      include?(current_user.friends)
-    end
-
     private
-
+    
     def user_params
       params.require(:user).permit(:id, :first_name, :last_name, :avatar)
     end
