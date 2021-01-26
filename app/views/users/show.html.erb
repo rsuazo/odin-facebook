@@ -1,6 +1,8 @@
 <h1><%= @user.first_name %>'s Profile</h1>
 
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+<% if @user == current_user %>
+  <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+<% end %>
 
 <p>
 <div>Username: <%= @user.user_name %></div>
