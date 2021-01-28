@@ -3,11 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-facebook', '~> 8.0'
 
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 
 gem 'rails-controller-testing'
+
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'

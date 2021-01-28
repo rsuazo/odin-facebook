@@ -37,7 +37,13 @@
 
 14. The Users Index page lists all users and buttons for sending Friend Requests to those who are not already friends or who don’t already have a pending request. [COMPLETE]
 
-15. Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. See the RailsCast on FB authentication with Devise for a step-by-step look at how it works.
+15. Sign in should use OmniAuth to allow a user to sign in with their real Facebook account. See the RailsCast on FB authentication with Devise for a step-by-step look at how it works. [PARTIALLY COMPLETED]
+    * This is partially completed because Facebook is not providing email details for API access. I think this is temporary, and I will check back in a month or two to see if anything has changed.
+    * Implement [figaro](https://github.com/laserlemon/figaro) gem for Environment Variable management.
+    * Implement [OmniAuth w/ Devise](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview) for Facebook
+        * !NOTE! [Latest omniauth-facebook gem breaks devise](https://stackoverflow.com/questions/65702896/latest-omniauth-facebook-gem-breaks-devise)
+    * Quick way to build app and test omniauth w/ devise.
+        * [How to Integrate ‘devise’ and ‘omniauth-facebook’ Authentication To Your Rails App](https://hackernoon.com/how-to-integrate-devise-and-omniauth-facebook-authentication-to-your-rails-app-tyiv3xpi)
 
 16. Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
 
