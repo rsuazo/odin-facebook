@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 1d138dd40cdc291a427b89027d16a869818a5c19
+  revision: 51c05a5b212f376180141fff9077075d0340c8ab
   branch: ca-omniauth-2
   specs:
     devise (4.7.3)
@@ -125,6 +125,10 @@ GEM
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
     jwt (2.2.2)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -314,6 +318,7 @@ DEPENDENCIES
   guard (~> 2.16, >= 2.16.2)
   guard-rspec (~> 4.7, >= 4.7.3)
   jbuilder (~> 2.7)
+  letter_opener
   listen (~> 3.3)
   omniauth (~> 1.9.1)
   omniauth-facebook (~> 8.0)

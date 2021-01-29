@@ -4,7 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+
 gem 'omniauth', '~> 1.9.1'
+
 gem 'omniauth-facebook', '~> 8.0'
 
 gem 'rexml', '~> 3.2', '>= 3.2.4'
@@ -12,6 +14,8 @@ gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'rails-controller-testing'
 
 gem 'figaro'
+
+gem "letter_opener", :group => :development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
@@ -34,6 +38,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

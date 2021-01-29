@@ -45,7 +45,10 @@
     * Quick way to build app and test omniauth w/ devise.
         * [How to Integrate ‘devise’ and ‘omniauth-facebook’ Authentication To Your Rails App](https://hackernoon.com/how-to-integrate-devise-and-omniauth-facebook-authentication-to-your-rails-app-tyiv3xpi)
 
-16. Set up a mailer to send a welcome email when a new user signs up. Use the letter_opener gem (see docs here) to test it in development mode.
+16. Set up a [mailer](https://guides.rubyonrails.org/action_mailer_basics.html) to send a welcome email when a new user signs up. Use the [letter_opener](https://github.com/ryanb/letter_opener) gem to test it in development mode. [COMPLETE]
+    * [Authentication and Sending Confirmation Email Using Devise 2020](https://www.bogotobogo.com/RubyOnRails/RubyOnRails_Devise_Authentication_Sending_Confirmation_Email.php)
+    * [Devise: Unpermitted parameters](https://stackoverflow.com/questions/35668465/devise-unpermitted-parameters)
+
 
 17. Deploy your App to Heroku.
 
