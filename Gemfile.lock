@@ -248,6 +248,7 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
     ruby2_keywords (0.0.4)
+    ruby_http_client (3.5.2)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -263,6 +264,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.1)
+    sendgrid-ruby (6.3.9)
+      ruby_http_client (~> 3.4)
     shellany (0.0.1)
     shoulda (4.0.0)
       shoulda-context (~> 2.0)
@@ -334,6 +337,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
+  sendgrid-ruby
   shoulda (~> 4.0)
   spring
   turbolinks (~> 5)
