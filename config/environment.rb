@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   :user_name => 'apikey',
   :password => ENV['SENDGRID_API_KEY'],
-  :domain => 'https://odin-facebook-suazo.herokuapp.com/',
+  :domain => 'odin-facebook-suazo.herokuapp.com/',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
