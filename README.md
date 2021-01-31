@@ -50,15 +50,22 @@
     * [Devise: Unpermitted parameters](https://stackoverflow.com/questions/35668465/devise-unpermitted-parameters)
 
 
-17. Deploy your App to Heroku.
+17. Deploy your App to Heroku. [COMPLETE]
 
-18. Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers.
+18. Set up the SendGrid add-on and start sending real emails. It’s free for low usage tiers. [COMPLETE]
+    * [Using Devise with Gmail, SendGrid, Rails and Heroku: Tips to save time debugging](https://medium.com/@cheney.shreve/using-devise-with-gmail-sendgrid-rails-and-heroku-tips-to-save-time-debugging-626546118358)
+        * I am not exactly sure what settings here worked, but something did the trick! :P
+        * Ensure to use an API key for SendGrid and that the [credential configuration is properly setup](https://stackoverflow.com/questions/59514512/rails-5-2-netsmtpauthenticationerror-535-authentication-failed-account-disa).
+        * [Implement Twilio SendGrid via Heroku](https://devcenter.heroku.com/articles/sendgrid#ruby)
 
 
+        
 ## Extra Credit
 
 * Adding Basic Search [COMPLETE]
     * [Adding a Basic Search Form in Rails](https://dev.to/mwong068/adding-a-basic-search-form-in-rails-5hnl)
+
+* Use [Active Storage](https://edgeguides.rubyonrails.org/active_storage_overview.html) to allow users to upload a photo to their profile. [COMPLETE]
 
 * Ruby version: ruby 3.0.0rc1 (2020-12-20 master 8680ae9cbd) [x86_64-darwin19]
 
